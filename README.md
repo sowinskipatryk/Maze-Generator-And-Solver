@@ -1,1 +1,1 @@
-A simple maze generator and solver project ideal for practising Breadth First Search (BFS) and Depth First Search (DFS) algorithms.
+A simple maze generator and solver project ideal for practising Breadth First Search (BFS) and Depth First Search (DFS) algorithms. Another solver version has been added that creates a .gif image showing the path to the solution using BFS algorithm and clearly shows its great advantage which is accuracy, but also its drawback - slowness, as the more paths potentially leading to the solution, the more time the algorithm needs to find it.
