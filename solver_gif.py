@@ -123,7 +123,7 @@ visited = [[False for _ in range(len(maze[0]))] for _ in range(len(maze))]
 
 images = []
 
-SCALE_MAZE = 30
+SCALE_MAZE = 12
 ROWS_NUM = len(maze[0])
 COLS_NUM = len(maze)
 START_X = maze[0].index('0')
@@ -191,12 +191,12 @@ def draw_board(m, v):
                            idy * SCALE_MAZE + SCALE_MAZE - 1,
                            idx * SCALE_MAZE + SCALE_MAZE - 1),
                            fill=color)
-            reduct_coef = 8
+            resize_coef = 3
             if v[idx][idy]:
-                draw.ellipse((idy * SCALE_MAZE + reduct_coef,
-                              idx * SCALE_MAZE + reduct_coef,
-                             idy * SCALE_MAZE + SCALE_MAZE - reduct_coef - 1,
-                             idx * SCALE_MAZE + SCALE_MAZE - reduct_coef - 1),
+                draw.ellipse((idy * SCALE_MAZE + resize_coef,
+                              idx * SCALE_MAZE + resize_coef,
+                             idy * SCALE_MAZE + SCALE_MAZE - resize_coef - 1,
+                             idx * SCALE_MAZE + SCALE_MAZE - resize_coef - 1),
                              fill=ELLIPSE_COLOR)
     images.append(img)
 
@@ -221,4 +221,4 @@ for j in range(4):
 
 # Linking all the images together and saving them as .gif file
 images[0].save('maze_solver.gif', save_all=True, append_images=images[1:],
-               optimize=False, duration=10, loop=0)
+               optimize=False, duration=8, loop=0)
