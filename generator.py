@@ -19,13 +19,13 @@ def any_unvisited(x, y, rows, cols, visited):
     if x > 0:
         if not visited[y][x - 1]:
             unv.append('left')
-    if x < cols - 1:
+    if x < rows - 1:
         if not visited[y][x + 1]:
             unv.append('right')
     if y > 0:
         if not visited[y - 1][x]:
             unv.append('up')
-    if y < rows - 1:
+    if y < cols - 1:
         if not visited[y + 1][x]:
             unv.append('down')
     return unv
@@ -67,12 +67,13 @@ def generate_maze(size_x, size_y):
             visited[adj_y][adj_x] = True
 
     # Adding the cross sign 'X' as the end point
-    maze[2 * size_x][2 * size_x - 1] = 'X'
+    maze[2 * size_y][2 * size_x - 1] = 'X'
 
-    print_maze(maze)
+    # Prints the maze in console to watch
+    # print_maze(maze)
 
     # Matrix format ready to be handed over to the solver
-    # print_raw_data(maze)
+    print_raw_data(maze)
 
 
-generate_maze(10, 10)
+generate_maze(25, 14)
