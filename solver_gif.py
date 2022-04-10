@@ -1,6 +1,7 @@
 import queue
 from PIL import Image, ImageDraw
 
+# Importing the maze from the generator
 maze = [['#', '0', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#',
          '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#',
          '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#',
@@ -137,8 +138,7 @@ START_COLOR = (52, 32, 86)
 END_COLOR = (84, 84, 197)
 ELLIPSE_COLOR = (255, 255, 255)
 
-
-# defining the queue and adding starting point
+# Defining the queue and adding the starting point
 q = queue.Queue()
 q.put((START_Y, START_X))
 
